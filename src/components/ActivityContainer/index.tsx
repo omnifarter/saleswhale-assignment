@@ -12,7 +12,7 @@ const ActivityContainer: FunctionComponent<ActivityContainerProps> = (
   const { activities } = props;
   return (
     <div
-      className="flex flex-col bg-white"
+      className="flex flex-col bg-white min-w-[256px] pb-8"
       style={{
         boxShadow:
           "0px 0px 4px rgba(0, 0, 0, 0.05), 0px 0px 30px rgba(0, 0, 0, 0.1)",

@@ -73,10 +73,7 @@ const TeamsPage: FunctionComponent<TeamsPageProps> = () => {
           setSearch={onSearchChange}
         />
 
-        <div
-          className="grid bg-[#E5E5E5] w-full p-8 gap-4 h-full"
-          style={{ gridTemplateColumns: "75% 25%" }}
-        >
+        <div className="flex justify-between bg-[#E5E5E5] w-full p-8 gap-4 h-full items-start">
           <TeamCardContainer teams={filteredTeams} />
           <ActivityContainer activities={activities} />
         </div>

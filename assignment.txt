@@ -1,0 +1,5 @@
+1. Clone the repo: https://github.com/omnifarter/saleswhale-assignment
+2. install dependencies with `npm i`.
+3. Run in dev mode using `npm start`.
+4. To build into static files, use `npm run build`.
+5. Deployed site: https://saleswhale-assignment-six.vercel.app/

@@ -1,11 +1,24 @@
-import { FunctionComponent } from "react";
-import { ReactComponent as NotificationLogo } from "../../assets/menu_notification.svg";
-import ProfilePic from "../../assets/john.png";
+import { FunctionComponent, useState } from "react";
+import { ReactComponent as NotificationLogo } from "../../assets/icon-mail.svg";
 import { ReactComponent as CaretDown } from "../../assets/caret_down.svg";
+import { useEffect } from "react";
+import { getUser } from "../../apis/api";
+import Badge from "../Badge";
+
+export interface User {
+  id: number;
+  name: string;
+  avatar: string;
+  notifications_count: number;
+}
 
 interface HeaderProps {}
-
 const Header: FunctionComponent<HeaderProps> = () => {
+  const [user, setUser] = useState<User>();
+
+  useEffect(() => {
+    setUser(getUser());
+  }, []);
   return (
     <div
       className="w-full h-[80px] flex justify-between px-8"
@@ -19,11 +32,11 @@ const Header: FunctionComponent<HeaderProps> = () => {
         <h3>Teams</h3>
       </div>
       <div className="flex items-center">
-        <NotificationLogo className="hover:cursor-pointer" />
-        <h3 className="text-sm mx-2">Hello, John</h3>
+        <Badge notifCount={user?.notifications_count} />
+        <h3 className="text-sm mx-2">Hello, {user?.name}</h3>
         <img
-          src={ProfilePic}
-          className="rounded-full mr-2 hover:cursor-pointer"
+          src={user?.avatar}
+          className="w-12 h-12 rounded-full mr-2 hover:cursor-pointer"
         />
         <CaretDown className="hover:cursor-pointer" />
       </div>

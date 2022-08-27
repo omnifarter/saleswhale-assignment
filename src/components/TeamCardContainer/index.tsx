@@ -11,7 +11,7 @@ const TeamCardContainer: FunctionComponent<TeamCardContainerProps> = (
 ) => {
   return (
     <div
-      className="flex flex-col bg-white  pb-16"
+      className="flex flex-col flex-grow bg-white pb-8"
       style={{
         boxShadow:
           "0px 0px 4px rgba(0, 0, 0, 0.05), 0px 0px 30px rgba(0, 0, 0, 0.1)",

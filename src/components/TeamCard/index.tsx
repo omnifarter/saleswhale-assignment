@@ -14,9 +14,7 @@ const TeamCard: FunctionComponent<TeamCardProps> = (props: TeamCardProps) => {
   return (
     <div
       style={{ border: "1px solid #E4E7EC" }}
-      className={`rounded-lg w-[300px] h-[188px] ${
-        team.is_archived ? "bg-[#E4E7EC]" : ""
-      }`}
+      className={`rounded-lg ${team.is_archived ? "bg-[#E4E7EC]" : ""}`}
     >
       <div className="flex w-full justify-between p-4">
         <div className="flex gap-4">
@@ -46,7 +44,7 @@ const TeamCard: FunctionComponent<TeamCardProps> = (props: TeamCardProps) => {
         {team.description}
       </p>
       <div style={{ marginTop: "8px", borderBottom: "1px solid #E4E7EC" }} />
-      <div className="flex w-full items-center gap-2 mt-4 px-4">
+      <div className="flex w-full items-center gap-2 my-4 px-4">
         <CampaignsLogo />
         <p className="opacity-40 text-sm mr-4">
           {team.campaigns_count} Campaigns

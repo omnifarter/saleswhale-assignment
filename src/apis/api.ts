@@ -17,3 +17,7 @@ export const getTeams =(team:string) => {
 export const getActivities = () => {
     return teams.activities
 }
+
+export const getUser = () => {
+    return teams.current_user
+}
